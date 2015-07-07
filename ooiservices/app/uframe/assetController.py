@@ -613,6 +613,7 @@ def update_asset(id):
     uframe_assets_url = _uframe_url(uframe_obj.__endpoint__, id)
     response = requests.put(uframe_assets_url, data=json.dumps(put_body), headers=_uframe_headers())
     if response.status_code == 200:
+        print "success!"
         asset_cache = cache.get('asset_list')
         cache.delete('asset_list')
         if asset_cache:
